@@ -1,0 +1,24 @@
+{
+"taskListe":[
+  {
+    "taskName":"Voir les identites des collaborateurs sur une page d accueil",
+    "taskDifficulty":""
+  },
+  {
+    "taskName":"Avoir une interface pour pouvoir creer un nouveau profil",
+    "taskDifficulty":""
+  },
+  {
+    "taskName":"Pouvoir inserer une photo de la personne dans son profil",
+    "taskDifficulty":""
+  },
+  {
+    "taskName":"Pouvoir modifier un profil existant",
+    "taskDifficulty":""
+  },
+  {
+    "taskName":"Pouvoir consulter le profil detaille d une identite selectionnee",
+    "taskDifficulty":""
+  }
+]
+}
