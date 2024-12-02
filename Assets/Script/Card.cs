@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
 
     private Animator anim;
+    public CardScriptableGameObject cardType;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         anim = transform.parent.GetComponent<Animator>();
+        transform.GetComponent<Image>().sprite = cardType.img;
     }
 
     // Update is called once per frame
@@ -31,16 +34,12 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         anim.SetBool("Over", false);
     }
 
-/*
-    private void OnMouseEnter()
+    public void OnPointerClick(PointerEventData  eventData)
     {
-        Debug.Log("Enter");
+        Debug.Log("Clicked");
+        anim.Play("Card_Selected");
+
+        GameManager.instance.NextPlayer(cardType);
     }
 
-    private void OnMouseExit()
-    {
-        Debug.Log("Exit");
-    }
-
-    */
 }

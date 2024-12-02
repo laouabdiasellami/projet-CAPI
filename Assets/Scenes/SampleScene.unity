@@ -340,10 +340,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2387efb7bf272140bb534b56afd64cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerListe:
+  - Player1
+  - Player2
+  - Player3
+  currentPlayer: 0
   jsonText: {fileID: 4900000, guid: 7ea59fc21cd41a84b87a85ebf4914eea, type: 3}
   myTaskListe:
     taskListe: []
   currentTask: -1
+  cardDeck:
+  - {fileID: 11400000, guid: 7f25b95cf5a71e0459f5334c81d9c259, type: 2}
+  - {fileID: 11400000, guid: eb4a23ef662ded14cbac39688e2b515c, type: 2}
+  - {fileID: 11400000, guid: 5783123379757f74984e5e42e992ab8a, type: 2}
+  - {fileID: 11400000, guid: 23712a8e36b77bd4c858aea32e3d28a8, type: 2}
+  - {fileID: 11400000, guid: f7479a1bec78a93499a2251be6d03761, type: 2}
+  - {fileID: 11400000, guid: fd86641701353c641ad48293908dc286, type: 2}
+  - {fileID: 11400000, guid: 834908d4c5b61ad49871c1e6d3623f48, type: 2}
+  - {fileID: 11400000, guid: b637ef2fb49b05e4bace664d18c2d643, type: 2}
+  - {fileID: 11400000, guid: 347cf747ab4d6864b935ce7420d609a3, type: 2}
+  - {fileID: 11400000, guid: b621b1b4e9ca2c843920089e22064845, type: 2}
+  - {fileID: 11400000, guid: c536acd5170a87a4bb42431ab8e0348c, type: 2}
+  - {fileID: 11400000, guid: 3577179d1505f2f4b8b6b3bd1ab32067, type: 2}
+  - {fileID: 11400000, guid: 54e3a10388bdee04db454dcaee41b0ea, type: 2}
 --- !u!4 &218846117
 Transform:
   m_ObjectHideFlags: 0

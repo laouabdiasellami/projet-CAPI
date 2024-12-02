@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
 
     public string[] playerListe;
+    public string[] playerValue;
     public int currentPlayer = 0;
     [Space]
     public TextAsset jsonText;
@@ -26,6 +27,12 @@ public class GameManager : MonoBehaviour
     {
         ReadJson();
         TaskUpdate();
+        UiManager.instance.CardInit(cardDeck);
+    }
+
+    public void NextPlayer(CardScriptableGameObject card)
+    {
+
     }
 
     public void TaskUpdate()
