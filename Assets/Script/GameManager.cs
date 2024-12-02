@@ -5,10 +5,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public string[] playerListe;
+    public int currentPlayer = 0;
+    [Space]
     public TextAsset jsonText;
     public TaskListe myTaskListe = new TaskListe();
-
+    [Space]
     public int currentTask =-1;
+    [Space]
+    public CardScriptableGameObject[] cardDeck;
 
     void Awake()
     {
