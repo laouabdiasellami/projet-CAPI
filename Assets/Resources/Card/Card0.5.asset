@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Card0.5
   m_EditorClassIdentifier: 
   img: {fileID: 402219089, guid: 16099b8472dec8942bd7c66f24040157, type: 3}
-  value: 1/2
+  value: 0.5
