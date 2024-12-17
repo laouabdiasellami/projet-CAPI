@@ -38,6 +38,27 @@ public class UiManager : MonoBehaviour
         taskText.text = "Task n°" + index + ": " + taskName;
     }
 
+    public void TalkTime()
+    {
+        StartCoroutine(WaitTalke());
+    }
+
+    public void EndTalke()
+    {
+        StopAllCoroutines();
+        anim.Play("Discution_Out");
+        NextPlayer(GameManager.instance.playerListe[0]);
+    }
+
+    private IEnumerator WaitTalke()
+    {
+        anim.Play("Discution_In");
+        yield return new WaitForSeconds(5);
+        anim.Play("Discution_Out");
+        NextPlayer(GameManager.instance.playerListe[0]);
+    }
+
+
     public void NextTask()
     {
         GameManager.instance.TaskUpdate();
@@ -56,6 +77,12 @@ public class UiManager : MonoBehaviour
         playerName.text = player;
     }
 
+    public void PlayerStart()
+    {
+        anim.Play("NextPlayer_Out");
+        CardRest();
+        //Start Timer
+    }
 
 
     public void CardInit(CardScriptableGameObject[] deck)

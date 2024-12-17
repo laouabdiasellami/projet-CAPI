@@ -58,9 +58,10 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
+
                     //Discution
                     currentPlayer = 0;
-                    UiManager.instance.NextPlayer(playerListe[currentPlayer]);
+                    UiManager.instance.TalkTime();
                 }
             }
             else if(myTaskListe.difficulty == "Moyenne")
@@ -147,6 +148,9 @@ public class GameManager : MonoBehaviour
         foreach (string value in playerValue)
         {
             if (value != "Cafée?" && value != "?")
+            {
+
+            }
                 
         }
 
