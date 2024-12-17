@@ -140,6 +140,19 @@ public class GameManager : MonoBehaviour
         return result.ToString();
     }
 
+    public void Extrem(out string max, out string min)
+    {
+        float[] intValue;
+
+        foreach (string value in playerValue)
+        {
+            if (value != "Cafée?" && value != "?")
+                
+        }
+
+        max = "player1";
+        min = "player2";
+    }
 
 
     [System.Serializable]

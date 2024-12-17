@@ -12,7 +12,11 @@ public class UiManager : MonoBehaviour
     public TextMeshProUGUI playerName;
     [Header("Transition")]
     public TextMeshProUGUI nextPlayer;
+    public TextMeshProUGUI timer;
+    public TextMeshProUGUI player1;
+    public TextMeshProUGUI player2;
 
+    private float time=0;
     private Animator anim;
 
     void Awake()
