@@ -7,6 +7,7 @@ public class UiManager : MonoBehaviour
 {
     public static UiManager instance = null;
     [Header("MainUi")]
+    public Transform main;
     public TextMeshProUGUI taskText;
     public Transform cards;
     public TextMeshProUGUI playerName;
@@ -27,17 +28,6 @@ public class UiManager : MonoBehaviour
         anim = transform.GetComponent<Animator>();
     }
 
-    public void DisplayTask(int index,string taskName)
-    {
-        StartCoroutine(WaitNextTask(index, taskName));
-    }
-
-    private IEnumerator WaitNextTask(int index, string taskName)
-    {
-        yield return new WaitForSeconds(2);
-        taskText.text = "Task n°" + index + ": " + taskName;
-    }
-
     public void TalkTime()
     {
         StartCoroutine(WaitTalke());
@@ -46,6 +36,7 @@ public class UiManager : MonoBehaviour
     public void EndTalke()
     {
         StopAllCoroutines();
+        main.gameObject.SetActive(false);
         anim.Play("Discution_Out");
         NextPlayer(GameManager.instance.playerListe[0]);
     }
@@ -54,14 +45,27 @@ public class UiManager : MonoBehaviour
     {
         anim.Play("Discution_In");
         yield return new WaitForSeconds(5);
+        main.gameObject.SetActive(false);
         anim.Play("Discution_Out");
+        yield return new WaitForSeconds(0.15f);
         NextPlayer(GameManager.instance.playerListe[0]);
     }
 
 
-    public void NextTask()
+    public void NextTask(int index, string taskName)
     {
-        GameManager.instance.TaskUpdate();
+        StartCoroutine(WaitTask(index,taskName));
+    }
+
+    private IEnumerator WaitTask(int index, string taskName)
+    {
+        anim.Play("Task_In");
+        yield return new WaitForSeconds(1);
+        main.gameObject.SetActive(false);
+        taskText.text = "Task n°" + index + ": " + taskName;
+        anim.Play("Task_Out");
+        yield return new WaitForSeconds(0.25f);
+        NextPlayer(GameManager.instance.playerListe[0]);
     }
 
     public void NextPlayer(string player)
@@ -80,6 +84,7 @@ public class UiManager : MonoBehaviour
     public void PlayerStart()
     {
         anim.Play("NextPlayer_Out");
+        main.gameObject.SetActive(true);
         CardRest();
         //Start Timer
     }

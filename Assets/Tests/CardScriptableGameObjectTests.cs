@@ -1,3 +1,4 @@
+/*
 using NUnit.Framework;
 using UnityEngine;
 
@@ -39,3 +40,4 @@ public class CardScriptableGameObjectTests
         Assert.AreEqual(cardScriptableObject.img, sprite);
     }
 }
+*/

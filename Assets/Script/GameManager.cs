@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
         myTaskListe.difficulty = difficulty;
         TaskUpdate();
         UiManager.instance.CardInit(cardDeck);
-        UiManager.instance.NextPlayer(playerListe[currentPlayer]);
+        UiManager.instance.NextTask(currentTask + 1, myTaskListe.taskListe[currentTask].taskName);
+        //UiManager.instance.NextPlayer(playerListe[currentPlayer]);
         
     }
 
@@ -92,7 +93,11 @@ public class GameManager : MonoBehaviour
     public void TaskUpdate()
     {
         if(currentTask<myTaskListe.taskListe.Length-1)
+        {
             currentTask++;
+            UiManager.instance.NextTask(currentTask + 1, myTaskListe.taskListe[currentTask].taskName);
+        }
+            
         else
         {
             WriteJson();
@@ -100,7 +105,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        UiManager.instance.DisplayTask(currentTask+1, myTaskListe.taskListe[currentTask].taskName);
+        
     }
 
     public void ReadJson()
