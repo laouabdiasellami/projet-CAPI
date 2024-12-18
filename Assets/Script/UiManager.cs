@@ -28,8 +28,10 @@ public class UiManager : MonoBehaviour
         anim = transform.GetComponent<Animator>();
     }
 
-    public void TalkTime()
+    public void TalkTime(string p1, string p2)
     {
+        player1.text = p1;
+        player2.text = p2;
         StartCoroutine(WaitTalke());
     }
 

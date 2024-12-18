@@ -12,7 +12,14 @@ public class TestUnitaire
         GameObject tester = new GameObject();
         GameManager gameManagerTester = tester.AddComponent<GameManager>();
 
-        Assert.IsTrue(gameManagerTester.Paire(4));
+        string[] players = { "Player1", "Player2", "Player3" };
+        string[] values = { "10", "25", "5" };
+
+        gameManagerTester.Extrem(players, values, out string max, out string min);
+        Assert.AreEqual("Player3", min);
+        Assert.AreEqual("Player2", max);
+
+        //Assert.IsTrue(gameManagerTester.Paire(4));
     }
 
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use

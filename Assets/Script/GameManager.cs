@@ -37,10 +37,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public bool Paire(int x)
-    {
-        return x % 2 == 0;
-    }
+
 
     public void NextPlayer(CardScriptableGameObject card)
     {
@@ -68,7 +65,8 @@ public class GameManager : MonoBehaviour
 
                     //Discution
                     currentPlayer = 0;
-                    UiManager.instance.TalkTime();
+                    Extrem(playerListe, playerValue, out string max, out string min);
+                    UiManager.instance.TalkTime(min,max);
                 }
             }
             else if(myTaskListe.difficulty == "Moyenne")
@@ -153,25 +151,33 @@ public class GameManager : MonoBehaviour
         return result.ToString();
     }
 
-    public void Extrem(out string max, out string min)
+    public void Extrem(string[] players, string[] values, out string max, out string min)
     {
         List<Player> numbersValue = new List<Player>();
 
-        for(int i=0; i < playerListe.Length -1 ;i++)
+        for (int i = 0; i < players.Length; i++)
         {
-            if (playerValue[i] != "Cafée?" && playerValue[i] != "?")
+            if (values[i] != "Cafée?" && values[i] != "?")
             {
                 Player p = new Player();
-                p.playerName = playerListe[i];
-                p.value = int.Parse(playerValue[i]);
+                p.playerName = players[i];
+                p.value = int.Parse(values[i]);
                 numbersValue.Add(p);
             }
         }
 
-        max = "player1";
-        min = "player2";
+        numbersValue.Sort(SortByValue);
+
+        max = numbersValue[numbersValue.Count-1].playerName;
+        min = numbersValue[0].playerName;
+
+
     }
 
+    static int SortByValue(Player p1, Player p2)
+    {
+        return p1.value.CompareTo(p2.value);
+    }
 
     [System.Serializable]
     public class Task
@@ -192,5 +198,7 @@ public class GameManager : MonoBehaviour
     {
         public string playerName;
         public float value;
+
+
     }
 }
