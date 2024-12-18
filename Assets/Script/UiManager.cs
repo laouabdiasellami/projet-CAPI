@@ -20,12 +20,36 @@ public class UiManager : MonoBehaviour
     private float time=0;
     private Animator anim;
 
+    private bool talkeTimer = false;
+    private float talkeTime = 11;
+    private int minutes;
+    private int secondes;
+
     void Awake()
     {
         if (instance == null)
             instance = this;
 
         anim = transform.GetComponent<Animator>();
+    }
+
+    public void Update()
+    {
+        if(talkeTimer)
+        {
+            if(talkeTime>0)
+            {
+                talkeTime -= Time.deltaTime;
+                minutes = Mathf.FloorToInt(talkeTime / 60f);
+                secondes = Mathf.FloorToInt(talkeTime - minutes * 60f);
+                timer.text = string.Format("{0:00}:{1:00}", minutes, secondes);
+            }
+            else
+            {
+                talkeTimer = false;
+                talkeTime = 11;
+            }
+        }
     }
 
     public void TalkTime(string p1, string p2)
@@ -37,6 +61,7 @@ public class UiManager : MonoBehaviour
 
     public void EndTalke()
     {
+        talkeTimer = false;
         StopAllCoroutines();
         main.gameObject.SetActive(false);
         anim.Play("Discution_Out");
@@ -46,7 +71,11 @@ public class UiManager : MonoBehaviour
     private IEnumerator WaitTalke()
     {
         anim.Play("Discution_In");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(0.15f);
+        talkeTime = 11;
+        talkeTimer = true;
+        yield return new WaitForSeconds(10);
+        talkeTimer = false;
         main.gameObject.SetActive(false);
         anim.Play("Discution_Out");
         yield return new WaitForSeconds(0.15f);
