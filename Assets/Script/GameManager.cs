@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.IO;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -34,6 +35,11 @@ public class GameManager : MonoBehaviour
         UiManager.instance.NextTask(currentTask + 1, myTaskListe.taskListe[currentTask].taskName);
         //UiManager.instance.NextPlayer(playerListe[currentPlayer]);
         
+    }
+
+    public bool Paire(int x)
+    {
+        return x % 2 == 0;
     }
 
     public void NextPlayer(CardScriptableGameObject card)
@@ -110,7 +116,8 @@ public class GameManager : MonoBehaviour
 
     public void ReadJson()
     {
-        myTaskListe = JsonUtility.FromJson<TaskListe>(jsonText.text);
+        if(jsonText != null)
+            myTaskListe = JsonUtility.FromJson<TaskListe>(jsonText.text);
     }
 
     public void WriteJson()
@@ -148,15 +155,17 @@ public class GameManager : MonoBehaviour
 
     public void Extrem(out string max, out string min)
     {
-        float[] intValue;
+        List<Player> numbersValue = new List<Player>();
 
-        foreach (string value in playerValue)
+        for(int i=0; i < playerListe.Length -1 ;i++)
         {
-            if (value != "Cafée?" && value != "?")
+            if (playerValue[i] != "Cafée?" && playerValue[i] != "?")
             {
-
+                Player p = new Player();
+                p.playerName = playerListe[i];
+                p.value = int.Parse(playerValue[i]);
+                numbersValue.Add(p);
             }
-                
         }
 
         max = "player1";
@@ -176,5 +185,12 @@ public class GameManager : MonoBehaviour
     {
         public string difficulty;
         public Task[] taskListe;
+    }
+
+    [System.Serializable]
+    public class Player
+    {
+        public string playerName;
+        public float value;
     }
 }
