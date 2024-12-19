@@ -423,11 +423,7 @@ MonoBehaviour:
   playerListe:
   - Player1
   - Player2
-  - Player3
-  - Player4
   playerValue:
-  - 
-  - 
   - 
   - 
   currentPlayer: 0
@@ -455,6 +451,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c536acd5170a87a4bb42431ab8e0348c, type: 2}
   - {fileID: 11400000, guid: 3577179d1505f2f4b8b6b3bd1ab32067, type: 2}
   - {fileID: 11400000, guid: 54e3a10388bdee04db454dcaee41b0ea, type: 2}
+  dataPath: TaskListe.json
 --- !u!4 &218846117
 Transform:
   m_ObjectHideFlags: 0

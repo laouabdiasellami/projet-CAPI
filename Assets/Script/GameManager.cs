@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public int currentTurn = 0;
     [Space]
     public CardScriptableGameObject[] cardDeck;
+    public string dataPath;
 
     void Awake()
     {
@@ -113,14 +114,27 @@ public class GameManager : MonoBehaviour
 
     public void ReadJson()
     {
+        /*
         if(jsonText != null)
             myTaskListe = JsonUtility.FromJson<TaskListe>(jsonText.text);
+        */
+        StreamReader reader;
+        reader = new StreamReader(File.OpenRead(Application.streamingAssetsPath + "/" + dataPath));
+        string json = "";
+        while (!reader.EndOfStream)
+        {
+            json+= reader.ReadLine();
+
+        }
+        reader.Close();
+        myTaskListe = JsonUtility.FromJson<TaskListe>(json);
     }
 
     public void WriteJson()
     {
         string tasks = JsonUtility.ToJson(myTaskListe);
-        File.WriteAllText(Application.dataPath + "/TaskListeUpgraded.json", tasks);
+        //File.WriteAllText(System.Environment.GetFolderPath(System.Environment.SpecialFolder.CommonDesktopDirectory) + "/TaskListeUpgraded.json", tasks);
+        File.WriteAllText(Application.dataPath + "/StreamingAssets/TaskListeUpgraded.json", tasks);
     }
 
 
