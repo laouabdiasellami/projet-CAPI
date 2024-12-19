@@ -1,0 +1,212 @@
+\doxysection{Ui\+Manager Class Reference}
+\hypertarget{class_ui_manager}{}\label{class_ui_manager}\index{UiManager@{UiManager}}
+Inheritance diagram for Ui\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ui_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ui_manager_a1e1f73e6533ee68aa55f1a677175f87a}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_ui_manager_a3358e17c0b3ff673712a8710c5945097}{Talk\+Time}} (string p1, string p2)
+\item 
+void \mbox{\hyperlink{class_ui_manager_a1a4734b125ccd6bec37a0402691c9db4}{End\+Talke}} ()
+\item 
+void \mbox{\hyperlink{class_ui_manager_a010096df418a1838ae1de9c384823a3e}{Next\+Task}} (int index, string task\+Name)
+\item 
+void \mbox{\hyperlink{class_ui_manager_ae8a29f51209a757ab969e4809cb1e24d}{Next\+Player}} (string player)
+\item 
+void \mbox{\hyperlink{class_ui_manager_a1defd7155d1fb0b962964d710816870e}{Player\+Start}} ()
+\item 
+void \mbox{\hyperlink{class_ui_manager_ae1a79ff03d2480e804779de72e3e7e33}{End\+Player}} ()
+\item 
+void \mbox{\hyperlink{class_ui_manager_a871b8f9b277299bcad3e8c78ff634497}{End\+Game}} ()
+\item 
+void \mbox{\hyperlink{class_ui_manager_a8775495c8c73b538a4c359fc8f15c3e3}{Card\+Init}} (\mbox{\hyperlink{class_card_scriptable_game_object}{Card\+Scriptable\+Game\+Object}}\mbox{[}$\,$\mbox{]} deck)
+\item 
+void \mbox{\hyperlink{class_ui_manager_a25412cd49868f64e21fcc53653f0606a}{Card\+Rest}} ()
+\item 
+void \mbox{\hyperlink{class_ui_manager_af5e8e7bc7accd50e34a962faf36b84f6}{Card\+Lock}} (bool state)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_ui_manager_ab41de3580cff406b86aea2668af814fe}{main}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ui_manager_a54293fe7b8a99d30edc284c621ed9012}{task\+Text}}
+\item 
+Transform \mbox{\hyperlink{class_ui_manager_a3ec49024710f88d055b9e9c947684fd8}{cards}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ui_manager_a74c085496c34c05565fb68255e1065e0}{player\+Name}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ui_manager_ae0995433f862a7971d6e98cb3b0e6e07}{player\+Timer\+Txt}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ui_manager_a70a64f88e01ff02222795b6f56e23bf3}{next\+Player}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ui_manager_a55ba4f9f2f77f17e97821ad4f5c61901}{timer}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ui_manager_ad1b9015d2c30d533626bcc379dd98da8}{player1}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_ui_manager_a074e666f4765531d33ddca1725503072}{player2}}
+\item 
+float \mbox{\hyperlink{class_ui_manager_a222ec9f6830a2f7ffba7686ea9200bcb}{time\+Player}}
+\item 
+float \mbox{\hyperlink{class_ui_manager_a69ab39bf2d5676045ee1f1feb8fea236}{time\+Talke}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_ui_manager}{Ui\+Manager}} \mbox{\hyperlink{class_ui_manager_a58cf0aa6f767e3ebb4a9b2af1d79c608}{instance}} = null
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ui_manager_a8775495c8c73b538a4c359fc8f15c3e3}\index{UiManager@{UiManager}!CardInit@{CardInit}}
+\index{CardInit@{CardInit}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{CardInit()}{CardInit()}}
+{\footnotesize\ttfamily \label{class_ui_manager_a8775495c8c73b538a4c359fc8f15c3e3} 
+void Ui\+Manager.\+Card\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_card_scriptable_game_object}{Card\+Scriptable\+Game\+Object}}\mbox{[}$\,$\mbox{]}}]{deck}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ui_manager_af5e8e7bc7accd50e34a962faf36b84f6}\index{UiManager@{UiManager}!CardLock@{CardLock}}
+\index{CardLock@{CardLock}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{CardLock()}{CardLock()}}
+{\footnotesize\ttfamily \label{class_ui_manager_af5e8e7bc7accd50e34a962faf36b84f6} 
+void Ui\+Manager.\+Card\+Lock (\begin{DoxyParamCaption}\item[{bool}]{state}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ui_manager_a25412cd49868f64e21fcc53653f0606a}\index{UiManager@{UiManager}!CardRest@{CardRest}}
+\index{CardRest@{CardRest}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{CardRest()}{CardRest()}}
+{\footnotesize\ttfamily \label{class_ui_manager_a25412cd49868f64e21fcc53653f0606a} 
+void Ui\+Manager.\+Card\+Rest (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ui_manager_a871b8f9b277299bcad3e8c78ff634497}\index{UiManager@{UiManager}!EndGame@{EndGame}}
+\index{EndGame@{EndGame}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{EndGame()}{EndGame()}}
+{\footnotesize\ttfamily \label{class_ui_manager_a871b8f9b277299bcad3e8c78ff634497} 
+void Ui\+Manager.\+End\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ui_manager_ae1a79ff03d2480e804779de72e3e7e33}\index{UiManager@{UiManager}!EndPlayer@{EndPlayer}}
+\index{EndPlayer@{EndPlayer}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{EndPlayer()}{EndPlayer()}}
+{\footnotesize\ttfamily \label{class_ui_manager_ae1a79ff03d2480e804779de72e3e7e33} 
+void Ui\+Manager.\+End\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ui_manager_a1a4734b125ccd6bec37a0402691c9db4}\index{UiManager@{UiManager}!EndTalke@{EndTalke}}
+\index{EndTalke@{EndTalke}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{EndTalke()}{EndTalke()}}
+{\footnotesize\ttfamily \label{class_ui_manager_a1a4734b125ccd6bec37a0402691c9db4} 
+void Ui\+Manager.\+End\+Talke (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ui_manager_ae8a29f51209a757ab969e4809cb1e24d}\index{UiManager@{UiManager}!NextPlayer@{NextPlayer}}
+\index{NextPlayer@{NextPlayer}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{NextPlayer()}{NextPlayer()}}
+{\footnotesize\ttfamily \label{class_ui_manager_ae8a29f51209a757ab969e4809cb1e24d} 
+void Ui\+Manager.\+Next\+Player (\begin{DoxyParamCaption}\item[{string}]{player}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ui_manager_a010096df418a1838ae1de9c384823a3e}\index{UiManager@{UiManager}!NextTask@{NextTask}}
+\index{NextTask@{NextTask}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{NextTask()}{NextTask()}}
+{\footnotesize\ttfamily \label{class_ui_manager_a010096df418a1838ae1de9c384823a3e} 
+void Ui\+Manager.\+Next\+Task (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{string}]{task\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ui_manager_a1defd7155d1fb0b962964d710816870e}\index{UiManager@{UiManager}!PlayerStart@{PlayerStart}}
+\index{PlayerStart@{PlayerStart}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{PlayerStart()}{PlayerStart()}}
+{\footnotesize\ttfamily \label{class_ui_manager_a1defd7155d1fb0b962964d710816870e} 
+void Ui\+Manager.\+Player\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ui_manager_a3358e17c0b3ff673712a8710c5945097}\index{UiManager@{UiManager}!TalkTime@{TalkTime}}
+\index{TalkTime@{TalkTime}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{TalkTime()}{TalkTime()}}
+{\footnotesize\ttfamily \label{class_ui_manager_a3358e17c0b3ff673712a8710c5945097} 
+void Ui\+Manager.\+Talk\+Time (\begin{DoxyParamCaption}\item[{string}]{p1}{, }\item[{string}]{p2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_ui_manager_a1e1f73e6533ee68aa55f1a677175f87a}\index{UiManager@{UiManager}!Update@{Update}}
+\index{Update@{Update}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_ui_manager_a1e1f73e6533ee68aa55f1a677175f87a} 
+void Ui\+Manager.\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_ui_manager_a3ec49024710f88d055b9e9c947684fd8}\index{UiManager@{UiManager}!cards@{cards}}
+\index{cards@{cards}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{cards}{cards}}
+{\footnotesize\ttfamily \label{class_ui_manager_a3ec49024710f88d055b9e9c947684fd8} 
+Transform Ui\+Manager.\+cards}
+
+\Hypertarget{class_ui_manager_a58cf0aa6f767e3ebb4a9b2af1d79c608}\index{UiManager@{UiManager}!instance@{instance}}
+\index{instance@{instance}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \label{class_ui_manager_a58cf0aa6f767e3ebb4a9b2af1d79c608} 
+\mbox{\hyperlink{class_ui_manager}{Ui\+Manager}} Ui\+Manager.\+instance = null\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_ui_manager_ab41de3580cff406b86aea2668af814fe}\index{UiManager@{UiManager}!main@{main}}
+\index{main@{main}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{main}{main}}
+{\footnotesize\ttfamily \label{class_ui_manager_ab41de3580cff406b86aea2668af814fe} 
+Transform Ui\+Manager.\+main}
+
+\Hypertarget{class_ui_manager_a70a64f88e01ff02222795b6f56e23bf3}\index{UiManager@{UiManager}!nextPlayer@{nextPlayer}}
+\index{nextPlayer@{nextPlayer}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{nextPlayer}{nextPlayer}}
+{\footnotesize\ttfamily \label{class_ui_manager_a70a64f88e01ff02222795b6f56e23bf3} 
+Text\+Mesh\+Pro\+UGUI Ui\+Manager.\+next\+Player}
+
+\Hypertarget{class_ui_manager_ad1b9015d2c30d533626bcc379dd98da8}\index{UiManager@{UiManager}!player1@{player1}}
+\index{player1@{player1}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{player1}{player1}}
+{\footnotesize\ttfamily \label{class_ui_manager_ad1b9015d2c30d533626bcc379dd98da8} 
+Text\+Mesh\+Pro\+UGUI Ui\+Manager.\+player1}
+
+\Hypertarget{class_ui_manager_a074e666f4765531d33ddca1725503072}\index{UiManager@{UiManager}!player2@{player2}}
+\index{player2@{player2}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{player2}{player2}}
+{\footnotesize\ttfamily \label{class_ui_manager_a074e666f4765531d33ddca1725503072} 
+Text\+Mesh\+Pro\+UGUI Ui\+Manager.\+player2}
+
+\Hypertarget{class_ui_manager_a74c085496c34c05565fb68255e1065e0}\index{UiManager@{UiManager}!playerName@{playerName}}
+\index{playerName@{playerName}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{playerName}{playerName}}
+{\footnotesize\ttfamily \label{class_ui_manager_a74c085496c34c05565fb68255e1065e0} 
+Text\+Mesh\+Pro\+UGUI Ui\+Manager.\+player\+Name}
+
+\Hypertarget{class_ui_manager_ae0995433f862a7971d6e98cb3b0e6e07}\index{UiManager@{UiManager}!playerTimerTxt@{playerTimerTxt}}
+\index{playerTimerTxt@{playerTimerTxt}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{playerTimerTxt}{playerTimerTxt}}
+{\footnotesize\ttfamily \label{class_ui_manager_ae0995433f862a7971d6e98cb3b0e6e07} 
+Text\+Mesh\+Pro\+UGUI Ui\+Manager.\+player\+Timer\+Txt}
+
+\Hypertarget{class_ui_manager_a54293fe7b8a99d30edc284c621ed9012}\index{UiManager@{UiManager}!taskText@{taskText}}
+\index{taskText@{taskText}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{taskText}{taskText}}
+{\footnotesize\ttfamily \label{class_ui_manager_a54293fe7b8a99d30edc284c621ed9012} 
+Text\+Mesh\+Pro\+UGUI Ui\+Manager.\+task\+Text}
+
+\Hypertarget{class_ui_manager_a222ec9f6830a2f7ffba7686ea9200bcb}\index{UiManager@{UiManager}!timePlayer@{timePlayer}}
+\index{timePlayer@{timePlayer}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{timePlayer}{timePlayer}}
+{\footnotesize\ttfamily \label{class_ui_manager_a222ec9f6830a2f7ffba7686ea9200bcb} 
+float Ui\+Manager.\+time\+Player}
+
+\Hypertarget{class_ui_manager_a55ba4f9f2f77f17e97821ad4f5c61901}\index{UiManager@{UiManager}!timer@{timer}}
+\index{timer@{timer}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{timer}{timer}}
+{\footnotesize\ttfamily \label{class_ui_manager_a55ba4f9f2f77f17e97821ad4f5c61901} 
+Text\+Mesh\+Pro\+UGUI Ui\+Manager.\+timer}
+
+\Hypertarget{class_ui_manager_a69ab39bf2d5676045ee1f1feb8fea236}\index{UiManager@{UiManager}!timeTalke@{timeTalke}}
+\index{timeTalke@{timeTalke}!UiManager@{UiManager}}
+\doxysubsubsection{\texorpdfstring{timeTalke}{timeTalke}}
+{\footnotesize\ttfamily \label{class_ui_manager_a69ab39bf2d5676045ee1f1feb8fea236} 
+float Ui\+Manager.\+time\+Talke}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_ui_manager_8cs}{Ui\+Manager.\+cs}}\end{DoxyCompactItemize}
