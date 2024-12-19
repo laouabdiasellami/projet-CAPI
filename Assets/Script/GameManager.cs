@@ -71,25 +71,12 @@ public class GameManager : MonoBehaviour
             }
             else if(myTaskListe.difficulty == "Moyenne")
             {
-                myTaskListe.taskListe[currentTask].taskDifficulty = Moyenne();
+                myTaskListe.taskListe[currentTask].taskDifficulty = Moyenne(playerValue);
                 currentPlayer = 0;
                 currentTurn = 0;
                 UiManager.instance.NextPlayer(playerListe[currentPlayer]);
                 TaskUpdate();
             }
-
-            /*
-            currentPlayer = 0;
-            UiManager.instance.NextPlayer(playerListe[currentPlayer]);
-            int val = 0;
-            foreach (string value in playerValue)
-            {
-                val += int.Parse(value);
-            }
-            myTaskListe.taskListe[currentTask].taskDifficulty = val.ToString();
-
-            TaskUpdate();
-            */
         }
         
     }
@@ -139,11 +126,11 @@ public class GameManager : MonoBehaviour
         return true;    
     }
 
-    public string Moyenne()
+    public string Moyenne(string[] values)
     {
         float result = 0;
         int i = 0;
-        foreach (string value in playerValue)
+        foreach (string value in values)
         {
             if(value != "Cafée?" && value != "?")
             {
@@ -153,6 +140,7 @@ public class GameManager : MonoBehaviour
                 
         }
         result /= i;
+        result = Mathf.FloorToInt(result);
         return result.ToString();
     }
 
