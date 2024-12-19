@@ -18,7 +18,7 @@ public class TestUnitaire
         gameManagerTester.Extrem(players, values, out string max, out string min);
         Assert.AreEqual("Player3", min);
         Assert.AreEqual("Player3", max);
-        Assert.AreEqual("5", gameManagerTester.Median(players, values));
+        Assert.AreEqual("5", gameManagerTester.Mediane(values));
         Assert.AreEqual("5", gameManagerTester.Moyenne(values));
 
         //Assert.IsTrue(gameManagerTester.Paire(4));

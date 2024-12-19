@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if(currentTurn ==0)
+            if(currentTurn ==0 || myTaskListe.difficulty == "Unanimite")
             {
                 currentTurn++;
                 if(Unanimite(out string val))
@@ -62,21 +62,33 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-
                     //Discution
                     currentPlayer = 0;
                     Extrem(playerListe, playerValue, out string max, out string min);
                     UiManager.instance.TalkTime(min,max);
                 }
             }
-            else if(myTaskListe.difficulty == "Moyenne")
+            else
             {
-                myTaskListe.taskListe[currentTask].taskDifficulty = Moyenne(playerValue);
+                if(Unanimite(out string val))
+                {
+                    myTaskListe.taskListe[currentTask].taskDifficulty = val;
+                }
+                else if (myTaskListe.difficulty == "Moyenne")
+                {
+                    myTaskListe.taskListe[currentTask].taskDifficulty = Moyenne(playerValue);
+                }
+                else if (myTaskListe.difficulty == "Mediane")
+                {
+                    myTaskListe.taskListe[currentTask].taskDifficulty = Mediane(playerValue);
+                }
+
                 currentPlayer = 0;
                 currentTurn = 0;
                 UiManager.instance.NextPlayer(playerListe[currentPlayer]);
                 TaskUpdate();
             }
+
         }
         
     }
@@ -144,15 +156,14 @@ public class GameManager : MonoBehaviour
         return result.ToString();
     }
 
-    public string Median(string[] players, string[] values)
+    public string Mediane(string[] values)
     {
         List<Player> numbersValue = new List<Player>();
-        for (int i = 0; i < players.Length; i++)
+        for (int i = 0; i < values.Length; i++)
         {
             if (values[i] != "Cafée?" && values[i] != "?")
             {
                 Player p = new Player();
-                p.playerName = players[i];
                 p.value = int.Parse(values[i]);
                 numbersValue.Add(p);
             }
