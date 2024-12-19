@@ -1,0 +1,24 @@
+digraph "GameManager.StartGame"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="GameManager.StartGame",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge9_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="UiManager.CardInit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_manager.html#a8775495c8c73b538a4c359fc8f15c3e3",tooltip="Spawn all cards from deck."];
+  Node1 -> Node3 [id="edge10_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="UiManager.NextTask",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_manager.html#a010096df418a1838ae1de9c384823a3e",tooltip=" "];
+  Node1 -> Node4 [id="edge11_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="GameManager.ReadJson",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_manager.html#aa7f4095f468ba56d4a956378c079fed8",tooltip="Read json file of name dataPath and save it content in myTaskListe."];
+  Node4 -> Node5 [id="edge12_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="GameManager.Reload",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_manager.html#a5296523b98d404767f91f1ade9a60221",tooltip="Reload the scene to restart a new game."];
+  Node1 -> Node6 [id="edge13_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="GameManager.TaskUpdate",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_manager.html#a81a246712cfe24d3464cc12d9a601465",tooltip=" "];
+  Node6 -> Node7 [id="edge14_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="UiManager.EndGame",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_manager.html#a871b8f9b277299bcad3e8c78ff634497",tooltip=" "];
+  Node6 -> Node3 [id="edge15_Node000006_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node6 -> Node8 [id="edge16_Node000006_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="GameManager.WriteJson",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_manager.html#ae2594ff051763a7f5fcf943d4778b1ca",tooltip="Creat a json file in SteamingAssets with task value."];
+}

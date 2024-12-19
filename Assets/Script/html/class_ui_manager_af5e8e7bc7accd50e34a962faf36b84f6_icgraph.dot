@@ -1,0 +1,17 @@
+digraph "UiManager.CardLock"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="UiManager.CardLock",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Make all cards interactive or note."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="UiManager.CardRest",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_manager.html#a25412cd49868f64e21fcc53653f0606a",tooltip="Reset all cards to default state."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="UiManager.PlayerStart",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_manager.html#a1defd7155d1fb0b962964d710816870e",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="UiManager.EndPlayer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_ui_manager.html#ae1a79ff03d2480e804779de72e3e7e33",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Card.OnPointerClick",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_card.html#a962b2468f84f718b6df8487b94f9d8b2",tooltip=" "];
+}
