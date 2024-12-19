@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public string difficulty;
     public string[] playerListe;
     public string[] playerValue;
     public int currentPlayer = 0;
@@ -29,13 +28,21 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+
+        //UiManager.instance.NextPlayer(playerListe[currentPlayer]);
+        
+    }
+
+    public void StartGame(string path, string difficulty, List<string>name, int players)
+    {
+        dataPath = path;
+        playerListe = name.ToArray();
+        playerValue = new string[players];
         ReadJson();
         myTaskListe.difficulty = difficulty;
         TaskUpdate();
         UiManager.instance.CardInit(cardDeck);
         UiManager.instance.NextTask(currentTask + 1, myTaskListe.taskListe[currentTask].taskName);
-        //UiManager.instance.NextPlayer(playerListe[currentPlayer]);
-        
     }
 
 

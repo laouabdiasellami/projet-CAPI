@@ -67,5 +67,9 @@ public class MenuManager : MonoBehaviour
             TMP_InputField p = players.GetChild(i).GetComponent<TMP_InputField>();
             playersName.Add(p.text);
         }
+
+        GameManager.instance.StartGame(jsonPath,gamerule,playersName,nbPlayer);
+
+        this.gameObject.SetActive(false);
     }
 }
