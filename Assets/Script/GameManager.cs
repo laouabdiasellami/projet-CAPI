@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -55,7 +56,6 @@ public class GameManager : MonoBehaviour
                     myTaskListe.taskListe[currentTask].taskDifficulty = val;
                     currentPlayer = 0;
                     currentTurn = 0;
-                    UiManager.instance.NextPlayer(playerListe[currentPlayer]);
                     TaskUpdate();
                 }
                 else
@@ -82,8 +82,7 @@ public class GameManager : MonoBehaviour
                 }
 
                 currentPlayer = 0;
-                currentTurn = 0;
-                UiManager.instance.NextPlayer(playerListe[currentPlayer]);
+                currentTurn = 0;               
                 TaskUpdate();
             }
 
@@ -95,14 +94,16 @@ public class GameManager : MonoBehaviour
     {
         if(currentTask<myTaskListe.taskListe.Length-1)
         {
+            //Next task
             currentTask++;
+            //UiManager.instance.NextPlayer(playerListe[currentPlayer]);
             UiManager.instance.NextTask(currentTask + 1, myTaskListe.taskListe[currentTask].taskName);
-        }
-            
+        }    
         else
         {
+            //EndGame
             WriteJson();
-            Debug.Log("Task liste ended");
+            UiManager.instance.EndGame();
             return;
         }      
     }
@@ -124,6 +125,16 @@ public class GameManager : MonoBehaviour
     {
         string tasks = JsonUtility.ToJson(myTaskListe);
         File.WriteAllText(Application.dataPath + "/StreamingAssets/TaskListeUpgraded.json", tasks);
+    }
+
+    public void Reload()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 
@@ -202,6 +213,8 @@ public class GameManager : MonoBehaviour
     {
         return p1.value.CompareTo(p2.value);
     }
+
+
 
     [System.Serializable]
     public class Task

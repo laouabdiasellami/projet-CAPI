@@ -76,8 +76,6 @@ public class UiManager : MonoBehaviour
         }
     }
 
-
-
     public void TalkTime(string p1, string p2)
     {
         player1.text = p1;
@@ -108,7 +106,6 @@ public class UiManager : MonoBehaviour
         NextPlayer(GameManager.instance.playerListe[0]);
     }
 
-
     public void NextTask(int index, string taskName)
     {
         StartCoroutine(WaitTask(index,taskName));
@@ -129,10 +126,10 @@ public class UiManager : MonoBehaviour
     {
         nextPlayer.text = player;
         anim.Play("NextPlayer_In");
-        StartCoroutine(WaitForTransition(player));
+        StartCoroutine(WaitNextPlayer(player));
     }
 
-    private IEnumerator WaitForTransition(string player)
+    private IEnumerator WaitNextPlayer(string player)
     {
         yield return new WaitForSeconds(1);
         playerName.text = player;
@@ -163,6 +160,11 @@ public class UiManager : MonoBehaviour
         CardScriptableGameObject card = new CardScriptableGameObject();
         card.value = "?";
         GameManager.instance.NextPlayer(card);
+    }
+
+    public void EndGame()
+    {
+        anim.Play("EndGame_In");
     }
 
     public void CardInit(CardScriptableGameObject[] deck)
