@@ -110,21 +110,31 @@ public class GameManager : MonoBehaviour
 
     public void ReadJson()
     {
-        StreamReader reader;
-        reader = new StreamReader(File.OpenRead(Application.streamingAssetsPath + "/" + dataPath));
-        string json = "";
-        while (!reader.EndOfStream)
+        
+        try
         {
-            json+= reader.ReadLine();
+            StreamReader reader;
+            reader = new StreamReader(File.OpenRead(Application.streamingAssetsPath + "/" + dataPath));
+            string json = "";
+            while (!reader.EndOfStream)
+            {
+                json += reader.ReadLine();
+            }
+            reader.Close();
+            myTaskListe = JsonUtility.FromJson<TaskListe>(json);
         }
-        reader.Close();
-        myTaskListe = JsonUtility.FromJson<TaskListe>(json);
+        catch
+        {
+            Reload();
+        }
+        
+
     }
 
     public void WriteJson()
     {
         string tasks = JsonUtility.ToJson(myTaskListe);
-        File.WriteAllText(Application.dataPath + "/StreamingAssets/TaskListeUpgraded.json", tasks);
+        File.WriteAllText(Application.dataPath + "/StreamingAssets/TaskListUpgraded.json", tasks);
     }
 
     public void Reload()
