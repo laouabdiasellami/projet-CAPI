@@ -26,11 +26,11 @@ void \mbox{\hyperlink{class_ui_manager_ae1a79ff03d2480e804779de72e3e7e33}{End\+P
 void \mbox{\hyperlink{class_ui_manager_a871b8f9b277299bcad3e8c78ff634497}{End\+Game}} ()
 \item 
 void \mbox{\hyperlink{class_ui_manager_a8775495c8c73b538a4c359fc8f15c3e3}{Card\+Init}} (\mbox{\hyperlink{class_card_scriptable_game_object}{Card\+Scriptable\+Game\+Object}}\mbox{[}$\,$\mbox{]} deck)
-\item 
+\begin{DoxyCompactList}\small\item\em Spawn all cards from deck. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ui_manager_a25412cd49868f64e21fcc53653f0606a}{Card\+Rest}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Reset all cards to default state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_ui_manager_af5e8e7bc7accd50e34a962faf36b84f6}{Card\+Lock}} (bool state)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Make all cards interactive or note. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -70,17 +70,39 @@ static \mbox{\hyperlink{class_ui_manager}{Ui\+Manager}} \mbox{\hyperlink{class_u
 {\footnotesize\ttfamily \label{class_ui_manager_a8775495c8c73b538a4c359fc8f15c3e3} 
 void Ui\+Manager.\+Card\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_card_scriptable_game_object}{Card\+Scriptable\+Game\+Object}}\mbox{[}$\,$\mbox{]}}]{deck}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Spawn all cards from deck. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deck} & List of all cards who muste be spawned\\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_ui_manager_af5e8e7bc7accd50e34a962faf36b84f6}\index{UiManager@{UiManager}!CardLock@{CardLock}}
 \index{CardLock@{CardLock}!UiManager@{UiManager}}
 \doxysubsubsection{\texorpdfstring{CardLock()}{CardLock()}}
 {\footnotesize\ttfamily \label{class_ui_manager_af5e8e7bc7accd50e34a962faf36b84f6} 
 void Ui\+Manager.\+Card\+Lock (\begin{DoxyParamCaption}\item[{bool}]{state}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Make all cards interactive or note. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Is the cards must be interactive\\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_ui_manager_a25412cd49868f64e21fcc53653f0606a}\index{UiManager@{UiManager}!CardRest@{CardRest}}
 \index{CardRest@{CardRest}!UiManager@{UiManager}}
 \doxysubsubsection{\texorpdfstring{CardRest()}{CardRest()}}
 {\footnotesize\ttfamily \label{class_ui_manager_a25412cd49868f64e21fcc53653f0606a} 
 void Ui\+Manager.\+Card\+Rest (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reset all cards to default state. 
 
 \Hypertarget{class_ui_manager_a871b8f9b277299bcad3e8c78ff634497}\index{UiManager@{UiManager}!EndGame@{EndGame}}
 \index{EndGame@{EndGame}!UiManager@{UiManager}}

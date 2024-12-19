@@ -25,21 +25,21 @@ void \mbox{\hyperlink{class_game_manager_a2853cb3e10060d3f2cd535ffe6c9dd43}{Next
 void \mbox{\hyperlink{class_game_manager_a81a246712cfe24d3464cc12d9a601465}{Task\+Update}} ()
 \item 
 void \mbox{\hyperlink{class_game_manager_aa7f4095f468ba56d4a956378c079fed8}{Read\+Json}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Read json file of name data\+Path and save it content in my\+Task\+Liste. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game_manager_ae2594ff051763a7f5fcf943d4778b1ca}{Write\+Json}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Creat a json file in Steaming\+Assets with task value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game_manager_a5296523b98d404767f91f1ade9a60221}{Reload}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Reload the scene to restart a new game. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game_manager_aad2528be72763c8bf072557d9ece157b}{Quit\+Game}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Close the Game. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_game_manager_aec44c123bc0027f49eab64599b1fd64a}{Unanimite}} (out string result)
-\item 
+\begin{DoxyCompactList}\small\item\em Find if all values of player\+Value list are equal. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_game_manager_a12eff2d5dd1a4805356c4439374b6a00}{Moyenne}} (string\mbox{[}$\,$\mbox{]} values)
-\item 
+\begin{DoxyCompactList}\small\item\em Find the avrege value of a list of values. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_game_manager_a9582ca9e54a0fc51410da48636bae540}{Mediane}} (string\mbox{[}$\,$\mbox{]} values)
-\item 
+\begin{DoxyCompactList}\small\item\em Find the median value in a list of values. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game_manager_ac7b5d27fff6c80592a89f01c4775992a}{Extrem}} (string\mbox{[}$\,$\mbox{]} players, string\mbox{[}$\,$\mbox{]} values, out string max, out string min)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Find the \doxylink{class_game_manager_1_1_player}{Player} with the smaller and bigger value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -75,18 +75,57 @@ static \mbox{\hyperlink{class_game_manager}{Game\+Manager}} \mbox{\hyperlink{cla
 {\footnotesize\ttfamily \label{class_game_manager_ac7b5d27fff6c80592a89f01c4775992a} 
 void Game\+Manager.\+Extrem (\begin{DoxyParamCaption}\item[{string\mbox{[}$\,$\mbox{]}}]{players}{, }\item[{string\mbox{[}$\,$\mbox{]}}]{values}{, }\item[{out string}]{max}{, }\item[{out string}]{min}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Find the \doxylink{class_game_manager_1_1_player}{Player} with the smaller and bigger value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em players} & List of all player names\\
+\hline
+{\em values} & List of all the value\\
+\hline
+{\em max} & Name of the player with the biggest value\\
+\hline
+{\em min} & Name of the player with the smallest value\\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_game_manager_a9582ca9e54a0fc51410da48636bae540}\index{GameManager@{GameManager}!Mediane@{Mediane}}
 \index{Mediane@{Mediane}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{Mediane()}{Mediane()}}
 {\footnotesize\ttfamily \label{class_game_manager_a9582ca9e54a0fc51410da48636bae540} 
 string Game\+Manager.\+Mediane (\begin{DoxyParamCaption}\item[{string\mbox{[}$\,$\mbox{]}}]{values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Find the median value in a list of values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & List of all values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Mediane value as string
+\end{DoxyReturn}
 \Hypertarget{class_game_manager_a12eff2d5dd1a4805356c4439374b6a00}\index{GameManager@{GameManager}!Moyenne@{Moyenne}}
 \index{Moyenne@{Moyenne}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{Moyenne()}{Moyenne()}}
 {\footnotesize\ttfamily \label{class_game_manager_a12eff2d5dd1a4805356c4439374b6a00} 
 string Game\+Manager.\+Moyenne (\begin{DoxyParamCaption}\item[{string\mbox{[}$\,$\mbox{]}}]{values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Find the avrege value of a list of values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & List of all values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Avrege value of the list
+\end{DoxyReturn}
 \Hypertarget{class_game_manager_a2853cb3e10060d3f2cd535ffe6c9dd43}\index{GameManager@{GameManager}!NextPlayer@{NextPlayer}}
 \index{NextPlayer@{NextPlayer}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{NextPlayer()}{NextPlayer()}}
@@ -99,17 +138,29 @@ void Game\+Manager.\+Next\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperli
 {\footnotesize\ttfamily \label{class_game_manager_aad2528be72763c8bf072557d9ece157b} 
 void Game\+Manager.\+Quit\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Close the Game. 
+
 \Hypertarget{class_game_manager_aa7f4095f468ba56d4a956378c079fed8}\index{GameManager@{GameManager}!ReadJson@{ReadJson}}
 \index{ReadJson@{ReadJson}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{ReadJson()}{ReadJson()}}
 {\footnotesize\ttfamily \label{class_game_manager_aa7f4095f468ba56d4a956378c079fed8} 
 void Game\+Manager.\+Read\+Json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Read json file of name data\+Path and save it content in my\+Task\+Liste. 
+
 \Hypertarget{class_game_manager_a5296523b98d404767f91f1ade9a60221}\index{GameManager@{GameManager}!Reload@{Reload}}
 \index{Reload@{Reload}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{Reload()}{Reload()}}
 {\footnotesize\ttfamily \label{class_game_manager_a5296523b98d404767f91f1ade9a60221} 
 void Game\+Manager.\+Reload (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reload the scene to restart a new game. 
 
 \Hypertarget{class_game_manager_add166d1ab8af9409f2ce0ea2b695381d}\index{GameManager@{GameManager}!StartGame@{StartGame}}
 \index{StartGame@{StartGame}!GameManager@{GameManager}}
@@ -129,11 +180,27 @@ void Game\+Manager.\+Task\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCap
 {\footnotesize\ttfamily \label{class_game_manager_aec44c123bc0027f49eab64599b1fd64a} 
 bool Game\+Manager.\+Unanimite (\begin{DoxyParamCaption}\item[{out string}]{result}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Find if all values of player\+Value list are equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & value of all elements in the list\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return true if all values are equal
+\end{DoxyReturn}
 \Hypertarget{class_game_manager_ae2594ff051763a7f5fcf943d4778b1ca}\index{GameManager@{GameManager}!WriteJson@{WriteJson}}
 \index{WriteJson@{WriteJson}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{WriteJson()}{WriteJson()}}
 {\footnotesize\ttfamily \label{class_game_manager_ae2594ff051763a7f5fcf943d4778b1ca} 
 void Game\+Manager.\+Write\+Json (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creat a json file in Steaming\+Assets with task value. 
 
 
 

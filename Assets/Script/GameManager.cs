@@ -108,6 +108,9 @@ public class GameManager : MonoBehaviour
         }      
     }
 
+    /// <summary>
+    /// Read json file of name dataPath and save it content in myTaskListe
+    /// </summary>
     public void ReadJson()
     {
         
@@ -131,23 +134,36 @@ public class GameManager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Creat a json file in SteamingAssets with task value
+    /// </summary>
     public void WriteJson()
     {
         string tasks = JsonUtility.ToJson(myTaskListe);
         File.WriteAllText(Application.dataPath + "/StreamingAssets/TaskListUpgraded.json", tasks);
     }
 
+    /// <summary>
+    /// Reload the scene to restart a new game
+    /// </summary>
     public void Reload()
     {
         SceneManager.LoadScene(0);
     }
 
+    /// <summary>
+    /// Close the Game
+    /// </summary>
     public void QuitGame()
     {
         Application.Quit();
     }
 
-
+    /// <summary>
+    /// Find if all values of playerValue list are equal
+    /// </summary>
+    /// <param name="result">value of all elements in the list</param>
+    /// <returns>Return true if all values are equal</returns>
     public bool Unanimite(out string result)
     {
         foreach (string value in playerValue)
@@ -162,6 +178,11 @@ public class GameManager : MonoBehaviour
         return true;    
     }
 
+    /// <summary>
+    /// Find the avrege value of a list of values
+    /// </summary>
+    /// <param name="values">List of all values</param>
+    /// <returns>Avrege value of the list</returns>
     public string Moyenne(string[] values)
     {
         float result = 0;
@@ -179,6 +200,11 @@ public class GameManager : MonoBehaviour
         return result.ToString();
     }
 
+    /// <summary>
+    /// Find the median value in a list of values
+    /// </summary>
+    /// <param name="values">List of all values</param>
+    /// <returns>Mediane value as string</returns>
     public string Mediane(string[] values)
     {
         List<Player> numbersValue = new List<Player>();
@@ -196,6 +222,13 @@ public class GameManager : MonoBehaviour
         return numbersValue[numbersValue.Count/2].value.ToString();
     }
 
+    /// <summary>
+    /// Find the Player with the smaller and bigger value
+    /// </summary>
+    /// <param name="players">List of all player names</param>
+    /// <param name="values">List of all the value</param>
+    /// <param name="max">Name of the player with the biggest value</param>
+    /// <param name="min">Name of the player with the smallest value</param>
     public void Extrem(string[] players, string[] values, out string max, out string min)
     {
         List<Player> numbersValue = new List<Player>();

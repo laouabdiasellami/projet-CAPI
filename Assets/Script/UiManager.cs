@@ -167,6 +167,10 @@ public class UiManager : MonoBehaviour
         anim.Play("EndGame_In");
     }
 
+    /// <summary>
+    /// Spawn all cards from deck
+    /// </summary>
+    /// <param name="deck">List of all cards who muste be spawned</param>
     public void CardInit(CardScriptableGameObject[] deck)
     {
         foreach(CardScriptableGameObject card in deck)
@@ -176,6 +180,9 @@ public class UiManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Reset all cards to default state
+    /// </summary>
     public void CardRest()
     {
         for(int i =0; i<cards.childCount;i++)
@@ -186,6 +193,10 @@ public class UiManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Make all cards interactive or note
+    /// </summary>
+    /// <param name="state">Is the cards must be interactive</param>
     public void CardLock(bool state)
     {
         for (int i = 0; i < cards.childCount; i++)
