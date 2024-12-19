@@ -142,13 +142,36 @@ public class GameManager : MonoBehaviour
     public string Moyenne()
     {
         float result = 0;
+        int i = 0;
         foreach (string value in playerValue)
         {
             if(value != "Cafée?" && value != "?")
+            {
                 result += int.Parse(value);
+                i++;
+            }
+                
         }
-        result /= playerListe.Length;
+        result /= i;
         return result.ToString();
+    }
+
+    public string Median(string[] players, string[] values)
+    {
+        List<Player> numbersValue = new List<Player>();
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (values[i] != "Cafée?" && values[i] != "?")
+            {
+                Player p = new Player();
+                p.playerName = players[i];
+                p.value = int.Parse(values[i]);
+                numbersValue.Add(p);
+            }
+        }
+        numbersValue.Sort(SortByValue);
+
+        return numbersValue[numbersValue.Count/2].value.ToString();
     }
 
     public void Extrem(string[] players, string[] values, out string max, out string min)
