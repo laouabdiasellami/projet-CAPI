@@ -25,14 +25,6 @@ public class GameManager : MonoBehaviour
             instance = this;
     }
 
-
-    void Start()
-    {
-
-        //UiManager.instance.NextPlayer(playerListe[currentPlayer]);
-        
-    }
-
     public void StartGame(string path, string difficulty, List<string>name, int players)
     {
         dataPath = path;
@@ -44,8 +36,6 @@ public class GameManager : MonoBehaviour
         UiManager.instance.CardInit(cardDeck);
         UiManager.instance.NextTask(currentTask + 1, myTaskListe.taskListe[currentTask].taskName);
     }
-
-
 
     public void NextPlayer(CardScriptableGameObject card)
     {
@@ -114,24 +104,17 @@ public class GameManager : MonoBehaviour
             WriteJson();
             Debug.Log("Task liste ended");
             return;
-        }
-
-        
+        }      
     }
 
     public void ReadJson()
     {
-        /*
-        if(jsonText != null)
-            myTaskListe = JsonUtility.FromJson<TaskListe>(jsonText.text);
-        */
         StreamReader reader;
         reader = new StreamReader(File.OpenRead(Application.streamingAssetsPath + "/" + dataPath));
         string json = "";
         while (!reader.EndOfStream)
         {
             json+= reader.ReadLine();
-
         }
         reader.Close();
         myTaskListe = JsonUtility.FromJson<TaskListe>(json);
@@ -140,7 +123,6 @@ public class GameManager : MonoBehaviour
     public void WriteJson()
     {
         string tasks = JsonUtility.ToJson(myTaskListe);
-        //File.WriteAllText(System.Environment.GetFolderPath(System.Environment.SpecialFolder.CommonDesktopDirectory) + "/TaskListeUpgraded.json", tasks);
         File.WriteAllText(Application.dataPath + "/StreamingAssets/TaskListeUpgraded.json", tasks);
     }
 
@@ -169,8 +151,7 @@ public class GameManager : MonoBehaviour
             {
                 result += int.Parse(value);
                 i++;
-            }
-                
+            }    
         }
         result /= i;
         result = Mathf.FloorToInt(result);
@@ -241,7 +222,5 @@ public class GameManager : MonoBehaviour
     {
         public string playerName;
         public float value;
-
-
     }
 }
