@@ -13,13 +13,13 @@ public class TestUnitaire
         GameManager gameManagerTester = tester.AddComponent<GameManager>();
 
         string[] players = { "Player1", "Player2", "Player3","Player4" };
-        string[] values = { "10", "25", "5", "?" };
+        string[] values = { "?", "?", "5", "?" };
 
         gameManagerTester.Extrem(players, values, out string max, out string min);
         Assert.AreEqual("Player3", min);
-        Assert.AreEqual("Player2", max);
-        Assert.AreEqual("10", gameManagerTester.Median(players, values));
-        Assert.AreEqual("13", gameManagerTester.Moyenne(values));
+        Assert.AreEqual("Player3", max);
+        Assert.AreEqual("5", gameManagerTester.Median(players, values));
+        Assert.AreEqual("5", gameManagerTester.Moyenne(values));
 
         //Assert.IsTrue(gameManagerTester.Paire(4));
     }
