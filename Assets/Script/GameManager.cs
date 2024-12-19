@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if(currentTurn ==0 || myTaskListe.difficulty == "Unanimite")
+            if(currentTurn ==0 || myTaskListe.difficulty == "Unanimité")
             {
                 currentTurn++;
                 if(Unanimite(out string val))
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
                 {
                     myTaskListe.taskListe[currentTask].taskDifficulty = Moyenne(playerValue);
                 }
-                else if (myTaskListe.difficulty == "Mediane")
+                else if (myTaskListe.difficulty == "Médiane")
                 {
                     myTaskListe.taskListe[currentTask].taskDifficulty = Mediane(playerValue);
                 }
