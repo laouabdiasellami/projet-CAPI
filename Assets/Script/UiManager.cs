@@ -11,17 +11,23 @@ public class UiManager : MonoBehaviour
     public TextMeshProUGUI taskText;
     public Transform cards;
     public TextMeshProUGUI playerName;
+    public TextMeshProUGUI playerTimerTxt;
     [Header("Transition")]
     public TextMeshProUGUI nextPlayer;
     public TextMeshProUGUI timer;
     public TextMeshProUGUI player1;
     public TextMeshProUGUI player2;
 
-    private float time=0;
     private Animator anim;
 
+
+    public float timePlayer;
+    public float timeTalke;
+
+    private bool playerTimer = false;
+    private float playerTime;
     private bool talkeTimer = false;
-    private float talkeTime = 11;
+    private float talkeTime;
     private int minutes;
     private int secondes;
 
@@ -35,6 +41,7 @@ public class UiManager : MonoBehaviour
 
     public void Update()
     {
+        //Timer disscution
         if(talkeTimer)
         {
             if(talkeTime>0)
@@ -47,10 +54,29 @@ public class UiManager : MonoBehaviour
             else
             {
                 talkeTimer = false;
-                talkeTime = 11;
+                talkeTime = timeTalke;
+            }
+        }
+
+        //Timer Joueur
+        if (playerTimer)
+        {
+            if (playerTime > 0)
+            {
+                playerTime -= Time.deltaTime;
+                minutes = Mathf.FloorToInt(playerTime / 60f);
+                secondes = Mathf.FloorToInt(playerTime - minutes * 60f);
+                playerTimerTxt.text = string.Format("{0:00}:{1:00}", minutes, secondes);
+            }
+            else
+            {
+                playerTimer = false;
+                playerTime = timePlayer;
             }
         }
     }
+
+
 
     public void TalkTime(string p1, string p2)
     {
@@ -72,9 +98,9 @@ public class UiManager : MonoBehaviour
     {
         anim.Play("Discution_In");
         yield return new WaitForSeconds(0.15f);
-        talkeTime = 11;
+        talkeTime = timeTalke;
         talkeTimer = true;
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(timeTalke);
         talkeTimer = false;
         main.gameObject.SetActive(false);
         anim.Play("Discution_Out");
@@ -114,12 +140,30 @@ public class UiManager : MonoBehaviour
 
     public void PlayerStart()
     {
-        anim.Play("NextPlayer_Out");
         main.gameObject.SetActive(true);
         CardRest();
-        //Start Timer
+        StartCoroutine(WaitPlayer());
     }
 
+    public void EndPlayer()
+    {
+        CardLock(true);
+        playerTimer = false;
+        StopAllCoroutines();
+    }
+
+    private IEnumerator WaitPlayer()
+    {
+        anim.Play("NextPlayer_Out");
+        yield return new WaitForSeconds(0.15f);
+        playerTime = timePlayer;
+        playerTimer = true;
+        yield return new WaitForSeconds(timePlayer);
+        playerTimer = false;
+        CardScriptableGameObject card = new CardScriptableGameObject();
+        card.value = "?";
+        GameManager.instance.NextPlayer(card);
+    }
 
     public void CardInit(CardScriptableGameObject[] deck)
     {

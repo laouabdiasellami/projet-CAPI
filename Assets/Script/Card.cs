@@ -39,7 +39,7 @@ public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IP
     {
         if(clickable)
         {
-            UiManager.instance.CardLock(true);
+            UiManager.instance.EndPlayer();
             anim.Play("Card_Selected");
             StartCoroutine(WaitForNextPlayer());
         }
